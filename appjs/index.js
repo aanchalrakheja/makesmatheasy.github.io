@@ -1,4 +1,4 @@
-var a=0,b=0,c=0,d=0,e=0,f=0,g=0;
+var a=0,b=0,c=0,d=0,e=0,f=0,g=0,h=0;
 
 function removeall(elid) {
   if (document.getElementById(elid).innerHTML != "") {
@@ -100,15 +100,49 @@ function changeImage1() {
 
 
  }
+
+ function changeImage8(){
+  h++;
+ 
+  if (h%2==0) 
+  {
+      document.getElementById("imgClickAndChange8").src = 'icons/down-chevron.svg';
+  }
+  else 
+  {
+      document.getElementById("imgClickAndChange8").src = 'icons/chevron-arrow-up.svg';
+  }
+
+
+ }
+
+ function changeImage9(){
+  i++;
+ 
+  if (i%2==0) 
+  {
+      document.getElementById("imgClickAndChange9").src = 'icons/down-chevron.svg';
+  }
+  else 
+  {
+      document.getElementById("imgClickAndChange9").src = 'icons/chevron-arrow-up.svg';
+  }
+
+
+ }
+
+
 function collapseit(openit) {
   $(String("#" + openit)).slideToggle();
 }
 function openit(id) {
   var ids = [
+    "#complexcollapse",
     "#equationssolver",
     "#mulsolwithsteps",
     "#table",
     "#shapescal",
+	"#tdshapescal",
     "#divide",
     "#simpletrignocollapse",
     "#trigonovaluestable",
@@ -118,6 +152,7 @@ function openit(id) {
     "#differentiatecollapse",
     "#partialdiffcollapse",
     "#laplacecollapse",
+    "#limitscollapse",
     "#matrixcollapse",
     "#multiplematrixcollapse",
     "#singlematrixcollapse",
@@ -128,6 +163,17 @@ function openit(id) {
     "#unitconcal",
     "#home",
     "#curconcal",
+    "#factorial",
+    "#log_values",
+    "#pandc",
+    "#interest",
+    "#decimal-binary",
+    "#bitwise-calc",
+    "#octal-binary",    
+	  "#binary-hexadecimal",
+    "#inversetrigonoiden",
+    "#prime",
+    "#sum_n_AP",
   ];
   for (i = 0; i < ids.length; i++) {
     if (ids[i] != id) {
@@ -146,7 +192,8 @@ function loadfilesafterload() {
     "appjs/simplecallogic.js",
     "appjs/searchbar.js",
     "appjs/speechrecoforall.js",
-
+    "appjs/complexlogic.js",
+    "appjs/logValue.js",
     "js/math.min.js",
     "js/plotly-1.35.2.min.js",
   ];
@@ -237,7 +284,7 @@ function checkfavourite() {
   }
   if (ar.length != 0) {
     for (i = 0; i < ar.length; i++) {
-      var el = document.createElement("span");
+      var el = document.createElement("li");
       el.textContent = ar[i];
       el.className = "favourites";
       el.style.color = "white";
@@ -254,6 +301,14 @@ function checkfavourite() {
     }
   }
 }
+
+$(document).on('click',' .favourites ',function(){
+  $(this).addClass('favnew');
+  $(this).siblings().removeClass('favnew');
+});
+$(document).on('hover',' .favnew ',function(){
+  $(this).addClass('favourites');
+});
 
 function removefavourite() {
   localStorage.removeItem("favouritearray");
