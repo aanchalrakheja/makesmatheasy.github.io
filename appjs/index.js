@@ -172,8 +172,11 @@ function openit(id) {
     "#octal-binary",    
 	  "#binary-hexadecimal",
     "#inversetrigonoiden",
+    "#datecal",
     "#prime",
     "#sum_n_AP",
+    "#algebraic_formulascollapse",
+    "#expansion",
   ];
   for (i = 0; i < ids.length; i++) {
     if (ids[i] != id) {

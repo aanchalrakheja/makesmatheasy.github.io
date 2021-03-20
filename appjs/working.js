@@ -110,8 +110,18 @@ $(document).ready(function () {
         closenav();
         clearall();
     })
+    $("#datebtn").click(function () {
+        openit("#datecal");
+        closenav();
+        clearall();
+    });
     $("#trigonoidenbutton").click(function () {
         openit("#trigonoiden");
+        closenav();
+        clearall();
+    })
+    $("#expansionbutton").click(function () {
+        openit("#expansion");
         closenav();
         clearall();
     })
@@ -184,7 +194,12 @@ $(document).ready(function () {
         closenav();
         clearall();
     }); 
-    
+    // algebraic equations formula lists
+    $("#algebraic_formulacollapsebtn").click(function () {
+    openit("#algebraic_formulascollapse");
+    closenav();
+    clearall();
+     }); 
     //Function of collapsing binary/decimal section on click
     $("#decimal-to-binary-btn").click(function(){
         openit("#decimal-binary");
